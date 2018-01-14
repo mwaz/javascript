@@ -27,23 +27,28 @@ Show content </button>
 
 
 <p> Lets do a bit of arithmetic here </p>
-<p id="sum"></p>
-<input type="text" id="num_one">
-<input type="text" id="num_two">
+
+<form id="add" method="post">
+<input type="text" name="num_one">
+<input type="text" name="num_two">
+
+</form>
+
+<p id="sum"> </p>
 
 
 
 <button type="button"
-onclick='sumOfNumbers()'>
+onclick='sumOfNumbers();'>
 Do maths </button>
 
 
 </body>
 <script>
 function sumOfNumbers(){
-  var num1 = document.getElementById('num_one');
-  var num2 = document.getElementById('num_two');
-  var sum = num1 + num2
+  var num1 = document.forms['add']['num_one'].value;
+  var num2 = document.forms['add']['num_two'].value;
+  sum = parseInt(num1) + parseInt(num2)
   document.getElementById("sum").innerHTML=sum
 }
 </script>
